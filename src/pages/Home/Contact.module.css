@@ -1,0 +1,60 @@
+.globalWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    height: 35vh;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 300;
+    gap: 2rem;
+}
+
+.contactInfo div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contactInfo div img {
+    width: 40px;
+    height: 40px;
+}
+
+.contactInfo div p {
+    text-decoration: none;
+    color: #000;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: clamp(20rem, 30vw, 80rem);
+    height: 100px;
+}
+
+.socialLinks a img {
+    width: 50px;
+    height: 50px;
+}
+
+.socialLinks a img:hover {
+    width: 55px;
+    height: 55px;
+}

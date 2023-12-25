@@ -1,0 +1,27 @@
+.globalWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skillList {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 300;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.skillList h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skillList li {
+    text-align: center;
+    list-style: none;
+}

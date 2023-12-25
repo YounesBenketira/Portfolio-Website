@@ -1,0 +1,20 @@
+.globalWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutText {
+    width: clamp(300px, 70%, 2000px);
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutText {
+        font-size: 1.5rem;
+    }
+}
