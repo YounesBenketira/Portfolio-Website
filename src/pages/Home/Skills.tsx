@@ -8,7 +8,7 @@ type SkillData = {
 const SKILLS: Array<SkillData> = [
     {
         category: 'Front-End',
-        skills: ['HTML | CSS | JS', 'React', 'React Native Expo', 'Next.js', 'Vite.js'],
+        skills: ['React', 'React Native Expo', 'Next.js', 'Vite.js', 'TypeScript', 'Tailwind'],
     },
     {
         category: 'Back-End',
@@ -24,10 +24,10 @@ export const Skills = () => {
     return (
         <div className={styles.globalWrapper}>
             {SKILLS.map((skillData: SkillData) => (
-                <div className={styles.skillList}>
+                <div key={skillData.category} className={styles.skillList}>
                     <h3>{skillData.category}</h3>
                     {skillData.skills.map((s: string) => (
-                        <li>{s}</li>
+                        <li key={s}>{s}</li>
                     ))}
                 </div>
             ))}
