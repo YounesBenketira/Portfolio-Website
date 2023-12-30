@@ -8,7 +8,6 @@ type ProjectData = {
     description: string;
     github: string | null;
     demo: string | null;
-    color: string;
 };
 
 const PROJECTS: Array<ProjectData> = [
@@ -18,7 +17,6 @@ const PROJECTS: Array<ProjectData> = [
         description: 'A social networking app built with React Native Expo, TypeScript, and Node.js',
         github: null,
         demo: 'https://www.gathera.ca', // @TODO: Add app store links when deployed
-        color: 'blue',
     },
     {
         index: 1,
@@ -26,50 +24,18 @@ const PROJECTS: Array<ProjectData> = [
         description: "A fitness app built with Google's Flutter framework",
         github: 'https://github.com/YounesBenketira/FitN',
         demo: null,
-        color: 'yellow',
-    },
-    {
-        index: 2,
-        title: '2',
-        description: "A fitness app built with Google's Flutter framework",
-        github: 'https://github.com/YounesBenketira/FitN',
-        demo: null,
-        color: 'pink',
-    },
-    {
-        index: 3,
-        title: '3',
-        description: "A fitness app built with Google's Flutter framework",
-        github: 'https://github.com/YounesBenketira/FitN',
-        demo: null,
-        color: 'green',
-    },
-    {
-        index: 4,
-        title: '4',
-        description: "A fitness app built with Google's Flutter framework",
-        github: 'https://github.com/YounesBenketira/FitN',
-        demo: null,
-        color: 'red',
-    },
-    {
-        index: 5,
-        title: '5',
-        description: "A fitness app built with Google's Flutter framework",
-        github: 'https://github.com/YounesBenketira/FitN',
-        demo: null,
-        color: 'blue',
     },
 ];
 
-export function useIsVisible(ref: any) {
-    const [isIntersecting, setIntersecting] = useState(false);
+function useIsVisible(ref: React.RefObject<HTMLDivElement>): boolean {
+    const [isIntersecting, setIntersecting] = useState<boolean>(false);
 
     useEffect(() => {
-        const threshold = (1 / PROJECTS.length) * 0.25;
+        const INTERSECTION_RATIO = 0.4;
+        const threshold = (1 / PROJECTS.length) * INTERSECTION_RATIO;
         const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.intersectionRatio > threshold), { threshold });
 
-        observer.observe(ref.current);
+        if (ref && ref.current) observer.observe(ref.current);
 
         return () => {
             observer.disconnect();
@@ -88,7 +54,7 @@ export const Projects = () => {
         <>
             <section ref={sectionRef} className={styles.globalWrapper}>
                 {PROJECTS.map((projectData: ProjectData) => (
-                    <ProjectImages key={projectData.index} index={projectData.index} color={projectData.color} setProjectIndex={setProjectIndex} />
+                    <ProjectImages key={projectData.index} index={projectData.index} setProjectIndex={setProjectIndex} />
                 ))}
             </section>
             {isVisible && (
