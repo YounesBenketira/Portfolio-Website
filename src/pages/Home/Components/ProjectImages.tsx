@@ -1,12 +1,14 @@
 import { useRef, useEffect } from 'react';
 import styles from './ProjectImages.module.css';
+import { Parallax } from 'react-scroll-parallax';
 
 interface ProjectImagesProps {
     index: number;
+    images: Array<any>;
     setProjectIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ProjectImages = ({ index, setProjectIndex }: ProjectImagesProps) => {
+export const ProjectImages = ({ index, images, setProjectIndex }: ProjectImagesProps) => {
     const imagesRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -14,7 +16,7 @@ export const ProjectImages = ({ index, setProjectIndex }: ProjectImagesProps) =>
             (entries: IntersectionObserverEntry[]) => {
                 if (entries[0].isIntersecting) setProjectIndex(index);
             },
-            { threshold: 0.6 }
+            { threshold: 0.25 }
         );
         if (imagesRef.current) observer.observe(imagesRef.current);
 
@@ -23,9 +25,18 @@ export const ProjectImages = ({ index, setProjectIndex }: ProjectImagesProps) =>
 
     return (
         <div ref={imagesRef} className={styles.globalWrapper}>
-            <div className={styles.mockupDummy} />
-
-            <div className={styles.mockupDummy} />
+            <Parallax speed={10} style={{ translate: -40 }} className={styles.mockupWrapper}>
+                <img src={images[0]} alt='mockup' className={styles.mockupImage} />
+            </Parallax>
+            <Parallax speed={60} style={{ translate: -100 }} className={styles.mockupWrapper}>
+                <img src={images[0]} alt='mockup' className={styles.mockupImage} />
+            </Parallax>
+            <Parallax speed={90} style={{ translate: 20 }} className={styles.mockupWrapper}>
+                <img src={images[0]} alt='mockup' className={styles.mockupImage} />
+            </Parallax>
+            <Parallax speed={40} style={{ translate: -60 }} className={styles.mockupWrapper}>
+                <img src={images[0]} alt='mockup' className={styles.mockupImage} />
+            </Parallax>
         </div>
     );
 };

@@ -6,8 +6,7 @@ type ProjectData = {
     index: number;
     title: string;
     description: string;
-    github: string | null;
-    demo: string | null;
+    illustrations: Array<any>;
 };
 
 const PROJECTS: Array<ProjectData> = [
@@ -15,15 +14,13 @@ const PROJECTS: Array<ProjectData> = [
         index: 0,
         title: 'Gathera',
         description: 'A social networking app built with React Native Expo, TypeScript, and Node.js',
-        github: null,
-        demo: 'https://www.gathera.ca', // @TODO: Add app store links when deployed
+        illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
     },
     {
         index: 1,
         title: 'FitN',
         description: "A fitness app built with Google's Flutter framework",
-        github: 'https://github.com/YounesBenketira/FitN',
-        demo: null,
+        illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
     },
 ];
 
@@ -54,15 +51,18 @@ export const Projects = () => {
         <>
             <section ref={sectionRef} className={styles.globalWrapper}>
                 {PROJECTS.map((projectData: ProjectData) => (
-                    <ProjectImages key={projectData.index} index={projectData.index} setProjectIndex={setProjectIndex} />
+                    <ProjectImages
+                        key={projectData.index}
+                        index={projectData.index}
+                        images={projectData.illustrations}
+                        setProjectIndex={setProjectIndex}
+                    />
                 ))}
             </section>
             {isVisible && (
                 <div className={styles.projectInfo}>
                     <h3>{PROJECTS[projectIndex].title}</h3>
                     <p>{PROJECTS[projectIndex].description}</p>
-                    {PROJECTS[projectIndex].github && <a href={PROJECTS[projectIndex].github ?? '/'}>GitHub</a>}
-                    {PROJECTS[projectIndex].demo && <a href={PROJECTS[projectIndex].demo ?? '/'}>Demo</a>}
                 </div>
             )}
         </>
