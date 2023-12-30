@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap');
 
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .globalWrapper {
     display: flex;
     flex-direction: column;
@@ -8,19 +19,20 @@
     height: clamp(50vh, 100vh, 100vh);
     width: 100%;
     padding-bottom: 10vh;
+    animation: fadeInFromLeft 1.5s ease-out;
 }
 
 .fullName {
     width: clamp(20rem, 90vw, 80rem);
     text-align: center;
     font-size: 10rem;
-    font-weight: bold;
+    font-weight: 700;
     font-family: 'Great Vibes';
     user-select: none;
 }
 
 .jobTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 50px;
     user-select: none;

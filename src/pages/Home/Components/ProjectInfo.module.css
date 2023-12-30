@@ -1,3 +1,32 @@
+@keyframes fadeInLetters {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Optional: You can adjust the vertical offset */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutLetters {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px); /* Optional: You can adjust the vertical offset */
+    }
+}
+
+.name,
+.techStack,
+.description,
+.linksRow a {
+    animation: fadeInLetters 2s ease-out forwards; /* Adjust the duration and easing as needed */
+}
+
 .globalWrapper {
     position: fixed;
     top: 0;
