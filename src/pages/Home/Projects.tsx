@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ProjectInfo } from './Components/ProjectInfo';
 import { ProjectsIllustrationList } from './Components/ProjectsIllustrationList';
 import { COMPONENT_IDS } from '../../App';
+import { gatheringList, messages, placeList, trending, calendar, information, workouts } from '../../assets';
 
 export type ProjectDetails = {
     title: string;
@@ -23,23 +24,14 @@ const PROJECTS: Array<ProjectDetails> = [
         title: 'Gathera',
         description: 'Social networking app that helps people meet new friends and discover places in their area',
         techStack: ['React Native Expo', 'TypeScript', 'Node.js'],
-        illustrations: [
-            './src/assets/projects/gathera/placeList.png',
-            './src/assets/projects/gathera/trending.png',
-            './src/assets/projects/gathera/gatheringList.png',
-            './src/assets/projects/gathera/messages.png',
-        ],
+        illustrations: [placeList, trending, gatheringList, messages],
         websiteUrl: 'https://www.gathera.ca',
     },
     {
         title: 'FitN',
         description: 'Mobile application that allows users to log their workouts and provides them with many health-related tools',
         techStack: ['Flutter', 'Dart'],
-        illustrations: [
-            './src/assets/projects/fitn/workouts.png',
-            './src/assets/projects/fitn/information.png',
-            './src/assets/projects/fitn/calendar.png',
-        ],
+        illustrations: [workouts, information, calendar],
         githubUrl: 'https://github.com/YounesBenketira/FitN',
     },
 ];
