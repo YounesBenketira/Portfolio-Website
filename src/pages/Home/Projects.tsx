@@ -1,26 +1,33 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './Projects.module.css';
-import { ProjectImages } from './Components/ProjectImages';
+import { ProjectInfo } from './Components/ProjectInfo';
+import { ProjectsIllustrationList } from './Components/ProjectsIllustrationList';
 
-type ProjectData = {
+export type ProjectDetails = {
     index: number;
     title: string;
     description: string;
+    techStack: Array<string>;
     illustrations: Array<any>;
+    githubUrl?: string;
+    websiteUrl?: string;
 };
 
-const PROJECTS: Array<ProjectData> = [
+const PROJECTS: Array<ProjectDetails> = [
     {
         index: 0,
         title: 'Gathera',
-        description: 'A social networking app built with React Native Expo, TypeScript, and Node.js',
+        description: 'Social networking app that helps people meet new friends and discover places in their area',
+        techStack: ['React Native Expo', 'TypeScript', 'Node.js'],
         illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
+        websiteUrl: 'https://www.gathera.ca',
     },
     {
         index: 1,
         title: 'FitN',
         description: "A fitness app built with Google's Flutter framework",
+        techStack: ['Flutter', 'Dart'],
         illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
+        githubUrl: 'https://github.com/YounesBenketira/FitN',
     },
 ];
 
@@ -49,22 +56,8 @@ export const Projects = () => {
 
     return (
         <>
-            <section ref={sectionRef} className={styles.globalWrapper}>
-                {PROJECTS.map((projectData: ProjectData) => (
-                    <ProjectImages
-                        key={projectData.index}
-                        index={projectData.index}
-                        images={projectData.illustrations}
-                        setProjectIndex={setProjectIndex}
-                    />
-                ))}
-            </section>
-            {isVisible && (
-                <div className={styles.projectInfo}>
-                    <h3>{PROJECTS[projectIndex].title}</h3>
-                    <p>{PROJECTS[projectIndex].description}</p>
-                </div>
-            )}
+            <ProjectsIllustrationList projects={PROJECTS} sectionRef={sectionRef} setProjectIndex={setProjectIndex} />
+            {isVisible && <ProjectInfo projectDetails={PROJECTS[projectIndex]} />}
         </>
     );
 };

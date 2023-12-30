@@ -1,14 +1,14 @@
 import { useRef, useEffect } from 'react';
-import styles from './ProjectImages.module.css';
+import styles from './ProjectIllustrations.module.css';
 import { Parallax } from 'react-scroll-parallax';
 
-interface ProjectImagesProps {
+interface ProjectIllustrationsProps {
     index: number;
     images: Array<any>;
     setProjectIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ProjectImages = ({ index, images, setProjectIndex }: ProjectImagesProps) => {
+export const ProjectIllustrations = ({ index, images, setProjectIndex }: ProjectIllustrationsProps) => {
     const imagesRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

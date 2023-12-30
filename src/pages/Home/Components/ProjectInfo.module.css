@@ -1,0 +1,43 @@
+.globalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 50%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.projectInfoWrapper {
+    padding: 10vh 3vw;
+}
+
+.name {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: bold;
+}
+
+.description {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+}
+
+.techStack {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+}
+
+.linksRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.linksRow a {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+}
