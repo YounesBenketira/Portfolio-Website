@@ -23,6 +23,7 @@ const SKILLS: Array<SkillData> = [
 export const Skills = () => {
     return (
         <div className={styles.globalWrapper}>
+            <h1 className={styles.backgroundText}>Skills</h1>
             {SKILLS.map((skillData: SkillData) => (
                 <div key={skillData.category} className={styles.skillList}>
                     <h3>{skillData.category}</h3>

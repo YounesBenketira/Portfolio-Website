@@ -79,3 +79,31 @@
     text-decoration: underline;
     color: black;
 }
+
+@media screen and (max-width: 1250px) {
+    .globalWrapper {
+        width: 100%;
+    }
+
+    .projectInfoWrapper {
+        width: 45%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-align: center;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        border-radius: 25px;
+        padding: 30px 0;
+        background-color: white;
+    }
+
+    .description {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .projectInfoWrapper {
+        width: 80%;
+    }
+}

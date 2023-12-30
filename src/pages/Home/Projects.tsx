@@ -68,8 +68,8 @@ export const Projects = () => {
 
     return (
         <>
-            <ProjectsIllustrationList projects={PROJECTS} sectionRef={sectionRef} setProjectIndex={setProjectIndex} />
             {isVisible && <ProjectInfo projectDetails={PROJECTS[projectIndex]} />}
+            <ProjectsIllustrationList projects={PROJECTS} sectionRef={sectionRef} setProjectIndex={setProjectIndex} />
         </>
     );
 };
