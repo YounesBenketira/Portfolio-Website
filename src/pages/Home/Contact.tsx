@@ -1,8 +1,9 @@
+import { COMPONENT_IDS } from '../../App';
 import styles from './Contact.module.css';
 
 export const Contact = () => {
     return (
-        <div className={styles.globalWrapper}>
+        <div className={styles.globalWrapper} id={COMPONENT_IDS.CONTACT}>
             <div className={styles.contactInfo}>
                 <div>
                     <img src='./src/assets/icons/email.svg' alt='Github' />

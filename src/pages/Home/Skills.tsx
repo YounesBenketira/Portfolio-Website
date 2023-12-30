@@ -1,3 +1,4 @@
+import { COMPONENT_IDS } from '../../App';
 import styles from './Skills.module.css';
 
 type SkillData = {
@@ -22,7 +23,7 @@ const SKILLS: Array<SkillData> = [
 
 export const Skills = () => {
     return (
-        <div className={styles.globalWrapper}>
+        <div className={styles.globalWrapper} id={COMPONENT_IDS.SKILLS}>
             <h1 className={styles.backgroundText}>Skills</h1>
             {SKILLS.map((skillData: SkillData) => (
                 <div key={skillData.category} className={styles.skillList}>

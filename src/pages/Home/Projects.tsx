@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ProjectInfo } from './Components/ProjectInfo';
 import { ProjectsIllustrationList } from './Components/ProjectsIllustrationList';
+import { COMPONENT_IDS } from '../../App';
 
 export type ProjectDetails = {
     title: string;
@@ -67,9 +68,9 @@ export const Projects = () => {
     const isVisible = useIsVisible(sectionRef);
 
     return (
-        <>
+        <div id={COMPONENT_IDS.PROJECTS}>
             {isVisible && <ProjectInfo projectDetails={PROJECTS[projectIndex]} />}
             <ProjectsIllustrationList projects={PROJECTS} sectionRef={sectionRef} setProjectIndex={setProjectIndex} />
-        </>
+        </div>
     );
 };

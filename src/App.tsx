@@ -6,6 +6,13 @@ import { HomeLayout } from './shared/Layouts/HomeLayout';
 import styles from './App.module.css';
 import { Projects } from './pages/Home/Projects';
 
+export const COMPONENT_IDS = {
+    ABOUT: 'about',
+    PROJECTS: 'projects',
+    SKILLS: 'skills',
+    CONTACT: 'contact',
+};
+
 function App() {
     return (
         <HomeLayout>
