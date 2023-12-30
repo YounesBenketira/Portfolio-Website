@@ -1,5 +1,5 @@
 .childrenWrapper {
     display: flex;
     flex-direction: column;
-    gap: 35vh;
+    gap: 25vh;
 }

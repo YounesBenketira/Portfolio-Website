@@ -5,29 +5,38 @@
     z-index: 1;
 
     width: 50%;
-    height: 100vh;
+    height: 70vh;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
 .projectInfoWrapper {
-    padding: 10vh 3vw;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
 }
 
 .name {
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    font-weight: bold;
-}
-
-.description {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-size: clamp(1.5rem, 5vw, 6rem);
+    line-height: 1;
     font-weight: 400;
 }
 
-.techStack {
+.description {
+    width: 90%;
+    display: flex;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
-    font-weight: bold;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+.techStack {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-weight: 300;
 }
 
 .linksRow {
@@ -36,7 +45,7 @@
 }
 
 .linksRow a {
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     font-weight: bold;
     text-decoration: underline;
     color: black;

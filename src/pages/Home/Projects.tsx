@@ -3,30 +3,42 @@ import { ProjectInfo } from './Components/ProjectInfo';
 import { ProjectsIllustrationList } from './Components/ProjectsIllustrationList';
 
 export type ProjectDetails = {
-    index: number;
     title: string;
     description: string;
     techStack: Array<string>;
-    illustrations: Array<any>;
+    illustrations: [string, string, string] | [string, string, string, string];
     githubUrl?: string;
     websiteUrl?: string;
+    googlePlayUrl?: string;
+    appStoreUrl?: string;
 };
 
+/**
+ * Data for each project to be displayed
+ * @illustrations 3 or 4 images
+ */
 const PROJECTS: Array<ProjectDetails> = [
     {
-        index: 0,
         title: 'Gathera',
         description: 'Social networking app that helps people meet new friends and discover places in their area',
         techStack: ['React Native Expo', 'TypeScript', 'Node.js'],
-        illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
+        illustrations: [
+            './src/assets/projects/gathera/placeList.png',
+            './src/assets/projects/gathera/trending.png',
+            './src/assets/projects/gathera/gatheringList.png',
+            './src/assets/projects/gathera/messages.png',
+        ],
         websiteUrl: 'https://www.gathera.ca',
     },
     {
-        index: 1,
         title: 'FitN',
-        description: "A fitness app built with Google's Flutter framework",
+        description: 'Mobile application that allows users to log their workouts and provides them with many health-related tools',
         techStack: ['Flutter', 'Dart'],
-        illustrations: ['./src/assets/projects/gathera/mockup.png', './src/assets/projects/gathera/mockup.png'],
+        illustrations: [
+            './src/assets/projects/fitn/workouts.png',
+            './src/assets/projects/fitn/information.png',
+            './src/assets/projects/fitn/calendar.png',
+        ],
         githubUrl: 'https://github.com/YounesBenketira/FitN',
     },
 ];

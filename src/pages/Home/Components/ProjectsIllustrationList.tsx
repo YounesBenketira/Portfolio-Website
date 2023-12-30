@@ -11,13 +11,8 @@ interface ProjectsIllustrationListProps {
 export const ProjectsIllustrationList = ({ projects, setProjectIndex, sectionRef }: ProjectsIllustrationListProps) => {
     return (
         <section ref={sectionRef} className={styles.globalWrapper}>
-            {projects.map((projectData: ProjectDetails) => (
-                <ProjectIllustrations
-                    key={projectData.index}
-                    index={projectData.index}
-                    images={projectData.illustrations}
-                    setProjectIndex={setProjectIndex}
-                />
+            {projects.map((projectData: ProjectDetails, index: number) => (
+                <ProjectIllustrations key={index} index={index} images={projectData.illustrations} setProjectIndex={setProjectIndex} />
             ))}
         </section>
     );
